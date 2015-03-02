@@ -45,7 +45,7 @@ void udp_init(int localPort, int bcastPort, char * baddr_s)
 	}
 	memset(&laddr, 0 , sizeof(laddr));
 	laddr.sin_family = AF_INET;
-	laddr.sin_port = htons(bcastPort);
+	laddr.sin_port = htons(localPort);
 	laddr.sin_addr.s_addr = INADDR_ANY; 
 	if (bind(lsocket, (struct sockaddr*) &laddr, sizeof(laddr)) < 0)
 	{
